@@ -33,6 +33,126 @@ const IesaItalia = () => {
       users: "15+",
       type: "Servizio Insulare"
     }
+    {
+      name: "ASL Caserta",
+      location: "Caserta, Caserta",
+      description: "Centro di riferimento  per lo IESA",
+      contact: "cedriforiesa@aslto3.piemonte.it",
+      website: "https://www.aslto3.piemonte.it/strutture/c-e-d-ri-for-iesa",
+      established: "2020",
+      users: "50+",
+      type: "Azienda Sanitaria Locale"
+    },
+    {
+      name: "AUSL Modena",
+      location: "Modena, Modena",
+      description: "Centro di riferimento per lo IESA",
+      contact: "cedriforiesa@aslto3.piemonte.it",
+      website: "https://www.ausl.mo.it/azienda/dipartimenti-territoriali/dipartimento-salute-mentale-dipendenze-patologiche/salute-mentale-adulti/progetto-iesa/",
+      established: "2020",
+      users: "50+",
+      type: "Azienda Sanitaria Locale"
+    },
+    {
+      name: "AUSL Bologna",
+      location: "Bologna, Bologna",
+      description: "Centro di riferimento per lo IESA",
+      contact: "cedriforiesa@aslto3.piemonte.it",
+      website: "https://www.ausl.bologna.it/cit/iesa",
+      established: "2020",
+      users: "50+",
+      type: "Azienda Sanitaria Locale"
+    },
+    {
+      name: "USL Firenze",
+      location: "Firenze, Firenze",
+      description: "Centro di riferimento per lo IESA",
+      contact: "inserimentieterofamiliari@uslcentro.toscana.it",
+      website: "https://www.facebook.com/progettoiesafirenze/",
+      established: "2020",
+      users: "50+",
+      type: "Azienda Sanitaria Locale"
+    },
+    {
+      name: "ASL BAT",
+      location: "Barletta, BAT",
+      description: "Centro di riferimento per lo IESA",
+      contact: "cedriforiesa@aslto3.piemonte.it",
+      website: "https://www.sanita.puglia.it/web/asl-barletta-andria-trani/archivio-news_det/-/journal_content/56/36008/aggiungi-un-posto-a-tavola-inserimento-eterofamiliare-per-adulti",
+      established: "2020",
+      users: "50+",
+      type: "Azienda Sanitaria Locale"
+    },
+    {
+      name: "AUSSL 9 Treviso",
+      location: "Oderzo, Treviso",
+      description: "Centro di riferimento per lo IESA",
+      contact: "lisa.loschi@aulss2.veneto.it",
+      website: "https://www.aulss2.veneto.it/Attivo-il-progetto-IESA-permette-di-accogliere-persone-con-disturbi-psichiatrici",
+      established: "2020",
+      users: "50+",
+      type: "Azienda Sanitaria Locale"
+    },
+    {
+      name: "Ass.ne 'La Rosa Bianca'",
+      location: "Modena, Modena",
+      description: "Centro di riferimento per lo IESA",
+      contact: "iesa@ausl.mo.it ,info@rosabiancamodena.it",
+      website: "https://www.rosabiancamodena.it/la-rosa-bianca/",
+      established: "2020",
+      users: "50+",
+      type: "Associazione"
+    },
+    {
+      name: "Coop. 'Alice nello Specchio'",
+      location: "Torino, Torino",
+      description: "Centro di riferimento per lo IESA",
+      contact: "edizioniansformazione@alicenellospecchio.it",
+      website: "https://www.alicenellospecchio.it/",
+      established: "2020",
+      users: "50+",
+      type: "Cooperativa"
+    },
+    {
+      name: "Coop. 'AEPER' - progetto 'La casa abitata'",
+      location: "Bergamo, Bergamo",
+      description: "Centro di riferimento per lo IESA",
+      contact: "cedriforiesa@aslto3.piemonte.it",
+      website: "https://www.cooperativaaeper.it/ricerca-progetti/affido-psichiatrico/",
+      established: "2020",
+      users: "50+",
+      type: "Cooperativa"
+    },
+    {
+      name: "Coop. 'Novo Millennio' - progetto 'So-Stare con voi'",
+      location: "Monza, Monza",
+      description: "Centro di riferimento per lo IESA",
+      contact: "cedriforiesa@aslto3.piemonte.it",
+      website: "https://www.novomillennio.it/area-salute-mentale/so-stare-con-voi/",
+      established: "2020",
+      users: "50+",
+      type: "Cooperativa"
+    },
+    {
+      name: "IESM - Coop. Sociale NEMO Onlus",
+      location: "Poirino, Torino",
+      description: "Centro di riferimento per lo IESA",
+      contact: "cedriforiesa@aslto3.piemonte.it",
+      website: "https://www.facebook.com/p/IESM-Cooperativa-sociale-NEMO-onlus-100067970336310/",
+      established: "2020",
+      users: "50+",
+      type: "Cooperativa"
+    },
+    {
+      name: "Ass.ne 'Uovo di colombo'",
+      location: "Viareggio, Lucca",
+      description: "Centro di riferimento per lo IESA",
+      contact: "cedriforiesa@aslto3.piemonte.it",
+      website: "https://www.uovodicolombo.net/chi-siamo/a",
+      established: "2020",
+      users: "50+",
+      type: "Associazione"
+    },
   ];
 
   const stats = [

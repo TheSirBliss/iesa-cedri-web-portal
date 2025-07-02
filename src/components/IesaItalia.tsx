@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MapPin, Users, Heart, Phone, ExternalLink, Building2 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -32,7 +31,7 @@ const IesaItalia = () => {
       established: "2019",
       users: "15+",
       type: "Servizio Insulare"
-    }
+    },
     {
       name: "ASL Caserta",
       location: "Caserta, Caserta",

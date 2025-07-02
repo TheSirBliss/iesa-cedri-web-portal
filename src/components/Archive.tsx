@@ -27,7 +27,8 @@ const Archive = () => {
       description: "Analisi comparativa dei modelli IESA europei con focus sulle best practices",
       url: "https://www.aslto3.piemonte.it/wp-content/uploads/2025/01/Archivio-libri.pdf",
       language: "Italiano",
-      pages: 245
+      pages: 245,
+      image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
       id: 2,
@@ -39,7 +40,8 @@ const Archive = () => {
       description: "Rivista europea sullo IESA con contributi scientifici internazionali",
       url: "#",
       language: "Italiano/Inglese",
-      pages: 68
+      pages: 68,
+      image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
       id: 3,
@@ -51,7 +53,8 @@ const Archive = () => {
       description: "Studio longitudinale sull'efficacia del modello IESA",
       url: "https://www.aslto3.piemonte.it/wp-content/uploads/2024/12/Archivio-tesi-di-laurea.pdf",
       language: "Italiano",
-      pages: 180
+      pages: 180,
+      image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
       id: 4,
@@ -63,7 +66,8 @@ const Archive = () => {
       description: "Raccolta di testimonianze di famiglie e ospiti IESA",
       url: "https://www.youtube.com/@cedriforiesaaslto3",
       language: "Italiano",
-      duration: "45 min"
+      duration: "45 min",
+      image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
       id: 5,
@@ -75,7 +79,8 @@ const Archive = () => {
       description: "Studio comparativo sull'accoglienza familiare in Europa",
       url: "#",
       language: "Inglese",
-      pages: 25
+      pages: 25,
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
       id: 6,
@@ -87,7 +92,8 @@ const Archive = () => {
       description: "Serie podcast sulla storia e l'evoluzione dello IESA",
       url: "#",
       language: "Italiano",
-      duration: "30 min"
+      duration: "30 min",
+      image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     }
   ];
 
@@ -157,14 +163,25 @@ const Archive = () => {
         {/* Documents Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {filteredDocuments.map((doc) => (
-            <Card key={doc.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <CardHeader className="pb-3">
-                <div className="flex items-center justify-between mb-2">
+            <Card key={doc.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src={doc.image} 
+                  alt={doc.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-3 left-3">
                   <span className="px-3 py-1 bg-iesa-teal text-white text-xs rounded-full">
                     {doc.type}
                   </span>
-                  <span className="text-xs text-gray-500">{doc.year}</span>
                 </div>
+                <div className="absolute top-3 right-3">
+                  <span className="px-2 py-1 bg-black/50 text-white text-xs rounded">
+                    {doc.year}
+                  </span>
+                </div>
+              </div>
+              <CardHeader className="pb-3">
                 <CardTitle className="text-lg text-iesa-blue group-hover:text-iesa-teal transition-colors line-clamp-2">
                   {doc.title}
                 </CardTitle>
@@ -197,7 +214,7 @@ const Archive = () => {
           ))}
         </div>
 
-        {/* Quick Access Links */}
+        {/* Quick Access Links - Primo link con colore nero */}
         <div className="bg-white rounded-2xl shadow-lg p-8">
           <h3 className="text-2xl font-bold text-iesa-blue mb-6 text-center">Accesso Rapido</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -205,7 +222,7 @@ const Archive = () => {
               href="https://www.aslto3.piemonte.it/wp-content/uploads/2025/01/Archivio-libri.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center p-4 bg-gradient-to-r from-iesa-blue to-iesa-teal text-white rounded-lg hover:shadow-lg transition-all duration-300 group"
+              className="flex items-center p-4 bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-lg hover:shadow-lg transition-all duration-300 group"
             >
               <BookOpen className="h-8 w-8 mr-3 group-hover:scale-110 transition-transform" />
               <div>

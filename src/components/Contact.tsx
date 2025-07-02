@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, User, MessageSquare } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { toast } from 'sonner';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,20 +14,31 @@ const Contact = () => {
     type: 'info',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Qui si può integrare EmailJS o altro servizio
-    console.log('Form submitted:', formData);
-    alert('Messaggio inviato con successo! Ti contatteremo presto.');
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      type: 'info',
-      message: ''
-    });
+    setIsSubmitting(true);
+    
+    // Simulazione invio form - qui andrà integrato EmailJS o altro servizio
+    try {
+      // Simulated API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      toast.success('Messaggio inviato con successo! Ti contatteremo presto.');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        type: 'info',
+        message: ''
+      });
+    } catch (error) {
+      toast.error('Errore nell\'invio del messaggio. Riprova più tardi.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -68,19 +80,19 @@ const Contact = () => {
       name: "Dott. Gianfranco Aluffi",
       role: "Direttore Scientifico",
       description: "Referente del Servizio IESA ASL TO3, Centro Esperto Regione Piemonte",
-      avatar: "GA"
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
     },
     {
       name: "Dott.ssa Chiara Laura Riccardo",
       role: "Coordinatore Scientifico",
       description: "Docente Università di Torino, Coordinatore CEDRI",
-      avatar: "CR"
+      avatar: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
     },
     {
       name: "Prof. Jean-Claude Cébula",
       role: "Consulente Internazionale",
       description: "Direttore IFREP Parigi, Esperto GREPFa",
-      avatar: "JC"
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
     }
   ];
 
@@ -206,10 +218,11 @@ const Contact = () => {
 
                   <Button 
                     type="submit"
+                    disabled={isSubmitting}
                     className="w-full bg-iesa-gradient hover:shadow-lg transition-all duration-300 text-lg py-3"
                   >
                     <Send className="h-5 w-5 mr-2" />
-                    Invia Messaggio
+                    {isSubmitting ? 'Invio in corso...' : 'Invia Messaggio'}
                   </Button>
                 </form>
               </CardContent>
@@ -241,18 +254,19 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            {/* Map */}
+            {/* Map - Indirizzo corretto di Collegno */}
             <Card className="shadow-xl border-0">
               <CardContent className="p-0">
                 <div className="h-64 bg-gray-200 rounded-lg relative overflow-hidden">
                   <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2817.8!2d7.55!3d45.07!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDA0JzEyLjYiTiA3wrAzMycwMC4wIkU!5e0!3m2!1sit!2sit!4v1234567890"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2817.8536842105263!2d7.551622876315789!3d45.077473871052634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4788152b95d6b5f5%3A0x1c4b8b8b8b8b8b8b!2sVia%20Martiri%20XXX%20Aprile%2C%2030%2C%2010093%20Collegno%20TO%2C%20Italy!5e0!3m2!1sen!2sit!4v1641234567890"
                     width="100%" 
                     height="256" 
                     style={{ border: 0, borderRadius: '8px' }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
+                    title="Mappa sede CEDRI IESA"
                   />
                 </div>
               </CardContent>
@@ -260,15 +274,19 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Team Section */}
+        {/* Team Section con foto realistiche */}
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-iesa-blue mb-8 text-center">Il Nostro Team</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {team.map((member, index) => (
               <Card key={index} className="text-center shadow-lg border-0 hover:shadow-xl transition-all duration-300">
                 <CardContent className="p-6">
-                  <div className="w-20 h-20 bg-iesa-gradient rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                    {member.avatar}
+                  <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
+                    <img 
+                      src={member.avatar} 
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <h4 className="text-lg font-semibold text-iesa-blue mb-1">{member.name}</h4>
                   <p className="text-iesa-teal font-medium mb-2">{member.role}</p>

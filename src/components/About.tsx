@@ -1,9 +1,9 @@
-
 import React from 'react';
 import { BookOpen, Users, Award, Globe, Heart, Target } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
-const About = () => {
+// Questa è l'unica e corretta definizione del componente "About"
+export const About: React.FC = () => {
   const features = [
     {
       icon: BookOpen,
@@ -55,6 +55,7 @@ const About = () => {
   ];
 
   return (
+    // L'ID "about" qui è corretto e permette alla navigazione di funzionare
     <section id="about" className="py-20 bg-gradient-to-br from-white to-gray-50">
       <div className="container mx-auto px-4">
         {/* Header */}
@@ -91,7 +92,7 @@ const About = () => {
                 <div className="relative">
                   <img 
                     src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                    alt="Team CEDRI" 
+                    alt="Un gruppo di persone che collaborano unite" 
                     className="rounded-xl shadow-lg"
                   />
                 </div>
@@ -170,13 +171,5 @@ const About = () => {
         </div>
       </div>
     </section>
-  );
-};
-
-export const About = (props) => {
-  return (
-    <div id="about" className="text-center"> // <-- Questo ID deve corrispondere all'href
-      {/* ... */}
-    </div>
   );
 };

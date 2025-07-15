@@ -7,15 +7,10 @@ import { Testimonials } from "./components/Testimonials";
 import { Team } from "./components/Team";
 import { Contact } from "./components/Contact";
 import JsonData from "./data/data.json";
-import SmoothScroll from "smooth-scroll";
 
 // Importa Helmet per la gestione della SEO
 import { Helmet } from "react-helmet-async";
 
-export const scroll = new SmoothScroll('a[href*="#"]', {
-  speed: 1000,
-  speedAsDuration: true,
-});
 
 const App = () => {
   const [landingPageData, setLandingPageData] = useState({});

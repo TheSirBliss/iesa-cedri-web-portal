@@ -3,13 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* Aggiungi queste due regole qui sotto */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* O l'altezza del tuo header, es: 5rem */
-}
-
 /* Importo i font Google */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
 

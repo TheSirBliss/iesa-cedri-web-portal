@@ -2,8 +2,8 @@ import React from 'react';
 import { BookOpen, Users, Award, Globe, Heart, Target } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
-// Questa è l'unica e corretta definizione del componente "About"
-export const About: React.FC = () => {
+// La funzione ora è una costante normale, non esportata direttamente qui
+const About: React.FC = () => {
   const features = [
     {
       icon: BookOpen,
@@ -55,10 +55,8 @@ export const About: React.FC = () => {
   ];
 
   return (
-    // L'ID "about" qui è corretto e permette alla navigazione di funzionare
     <section id="about" className="py-20 bg-gradient-to-br from-white to-gray-50">
       <div className="container mx-auto px-4">
-        {/* Header */}
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-iesa-blue mb-6">
             Chi Siamo
@@ -70,7 +68,6 @@ export const About: React.FC = () => {
           </p>
         </div>
 
-        {/* Mission Statement */}
         <div className="mb-16">
           <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-iesa-teal/10 to-transparent rounded-full -translate-y-32 translate-x-32"></div>
@@ -101,7 +98,6 @@ export const About: React.FC = () => {
           </div>
         </div>
 
-        {/* Features Grid */}
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-iesa-blue mb-8 text-center">Le Nostre Attività</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -131,7 +127,6 @@ export const About: React.FC = () => {
           </div>
         </div>
 
-        {/* Objectives */}
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-iesa-blue mb-8 text-center">I Nostri Obiettivi</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -147,7 +142,6 @@ export const About: React.FC = () => {
           </div>
         </div>
 
-        {/* Statistics */}
         <div className="bg-iesa-gradient rounded-2xl p-8 md:p-12 text-white text-center">
           <h3 className="text-3xl font-bold mb-8">CEDRI in Numeri</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -173,3 +167,6 @@ export const About: React.FC = () => {
     </section>
   );
 };
+
+// Aggiungiamo l'export di default in fondo, come per gli altri componenti
+export default About;

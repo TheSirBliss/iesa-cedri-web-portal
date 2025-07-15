@@ -4,7 +4,7 @@ import App from './App.jsx';
 import { HelmetProvider } from 'react-helmet-async';
 
 // 1. Importa globalmente i fogli di stile di Bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 // 2. Importa i tuoi stili globali personalizzati (se ne hai uno)
 // Assicurati che venga importato DOPO Bootstrap per poter sovrascrivere le regole

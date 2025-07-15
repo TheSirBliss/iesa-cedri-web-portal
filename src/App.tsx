@@ -22,7 +22,7 @@ const App = () => {
     <div>
       {/* Blocco per la gestione centralizzata della SEO */}
       <Helmet>
-        <meta charset="utf-g" />
+        <meta charset="utf-8" />
         <title>CEDRI for IESA | Formazione, Supervisione e Ricerca</title>
         <meta name="description" content="CEDRI for IESA è il centro di riferimento in Italia per la formazione, supervisione e ricerca sul modello IESA, un approccio innovativo all'accoglienza eterofamiliare supportata nella salute mentale." />
         <link rel="canonical" href="https://www.cedriforiesa.it" /> {/* Inserisci qui il tuo URL finale */}

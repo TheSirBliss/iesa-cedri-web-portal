@@ -173,4 +173,10 @@ const About = () => {
   );
 };
 
-export default About;
+export const About = (props) => {
+  return (
+    <div id="about" className="text-center"> // <-- Questo ID deve corrispondere all'href
+      {/* ... */}
+    </div>
+  );
+};
